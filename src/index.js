@@ -52,8 +52,8 @@ if (longLink) {
   formattedLink = addProtocolIfMissing(longLink)
   validateUrl(formattedLink)
   newRoute = {
-    route: `"${short}"`,
-    redirect: `"${formattedLink}"`,
+    route: `${short}`,
+    redirect: `${formattedLink}`,
     statusCode: '301',
   }
   validateUnique(newRoute, contents.routes)
@@ -63,7 +63,7 @@ if (longLink) {
 fs.writeFileSync(redirectPath, JSON.stringify(contents, null, '\t'))
 commitAndPush(short, formattedLink, repoRoot)
 
-const link = `"${baseUrl}${short}"`
+const link = `${baseUrl}${short}`
 clipboardy.writeSync(link)
 
 console.log(`"${link}" has been copied to your clipboard `)
