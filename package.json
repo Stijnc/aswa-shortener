@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/stijnca/asweb-shortener"
+    "url": "https://github.com/stijnc/asweb-shortener"
   },
   "bugs": {
-    "url": "https://github.com/stijnca/asweb-shortener/issues"
+    "url": "https://github.com/stijnc/asweb-shortener/issues"
   },
-  "homepage": "https://github.com/stijnca/asweb-shortener#readme",
+  "homepage": "https://github.com/stijnc/asweb-shortener#readme",
   "files": [
     "dist"
   ],
