@@ -1,6 +1,5 @@
 const {spawnSync} = require('child_process')
 const {
-  format,
   validateUnique,
   validateUrl,
   addProtocolIfMissing,
@@ -15,29 +14,6 @@ afterEach(() => {
   spawnSync.mockClear()
 })
 
-test('format formats the redirects links', () => {
-  expect(
-    format(`
-# comment 1
-
-/foo https://foo.com
-#comment2
-
-
-/* http://google.com
-  `),
-  ).toMatchInlineSnapshot(`
-"
-# comment1
-
-/foo   https://foo.com
-#comment2
-
-
-/*     http://google.com
-"
-`)
-})
 test('validates links are unique', () => {
   expect(() =>
     validateUnique(
