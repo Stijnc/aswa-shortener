@@ -42,7 +42,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     if:
-      ${{ github.repository == 'kentcdodds/netlify-shortener' &&
+      ${{ github.repository == 'Stijnc/asweb-shortener' &&
       contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha',
       github.ref) && github.event_name == 'push' }}
     steps:

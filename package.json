@@ -1,13 +1,13 @@
 {
-  "name": "netlify-shortener",
+  "name": "asweb-shortener",
   "version": "0.0.0-semantically-released",
-  "description": "Uses netlify's redirect functionality to make a personal URL shortener. Works beautifully :)",
+  "description": "Uses Azure Static Web App's routes functionality to make a personal URL shortener. Works beautifully :)",
   "main": "dist/index.js",
   "bin": {
-    "netlify-shortener": "./dist/index.js"
+    "asweb-shortener": "./dist/index.js"
   },
   "keywords": [],
-  "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com)",
+  "author": "Stijn Callebaut (https://callebaut.io)",
   "license": "MIT",
   "engines": {
     "node": ">=10",
@@ -15,15 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kentcdodds/netlify-shortener"
+    "url": "https://github.com/stijnca/asweb-shortener"
   },
   "bugs": {
-    "url": "https://github.com/kentcdodds/netlify-shortener/issues"
+    "url": "https://github.com/stijnca/asweb-shortener/issues"
   },
-  "homepage": "https://github.com/kentcdodds/netlify-shortener#readme",
+  "homepage": "https://github.com/stijnca/asweb-shortener#readme",
   "files": [
     "dist"
   ],
+  "config": {
+    "app_location": "src"
+  },
   "scripts": {
     "build": "kcd-scripts build",
     "lint": "kcd-scripts lint",

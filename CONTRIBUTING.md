@@ -15,7 +15,7 @@ series [How to Contribute to an Open Source Project on GitHub][egghead]
 > requests from branches on your fork. To do this, run:
 >
 > ```
-> git remote add upstream https://github.com/kentcdodds/netlify-shortener
+> git remote add upstream https://github.com/Stijnc/asweb-shortener
 > git fetch upstream
 > git branch --set-upstream-to=upstream/main main
 > ```
@@ -41,6 +41,5 @@ requests! Thanks!
 
 <!-- prettier-ignore-start -->
 [egghead]: https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github
-[all-contributors]: https://github.com/all-contributors/all-contributors
-[issues]: https://github.com/kentcdodds/netlify-shortener/issues
+[issues]: https://github.com/Stijnc/asweb-shortener/issues
 <!-- prettier-ignore-end -->
