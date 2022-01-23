@@ -1,37 +1,6 @@
 const {URL} = require('url')
 const {spawnSync} = require('child_process')
 
-function format(contents) {
-  const links = parseLinks(contents)
-
-  const longestLength = links.reduce((length, [short]) => {
-    if (short.startsWith('/') && short.length > length) {
-      return short.length
-    }
-    return length
-  }, 0)
-
-  const formattedLinks = links.map(([short, long]) => {
-    if (short.startsWith('/')) {
-      return `${short.padEnd(longestLength, ' ')}   ${long}`
-    } else {
-      return `${short}${long}`
-    }
-  })
-
-  return formattedLinks.join('\n')
-}
-
-function parseLinks(contents) {
-  return contents.split('\n').map(r => {
-    if (!r.trim()) {
-      return ['', '']
-    }
-    const [, short, long] = r.trim().match(/^(.*)\s+(.*)$/) || [r, r.trim(), '']
-    return [short.trim(), long.trim()]
-  })
-}
-
 function validateUnique(newRoute, content) {
   content.push(newRoute)
   const hasDuplicate = (arrayObj, colName) => {
@@ -90,7 +59,6 @@ function generateCode() {
 }
 
 module.exports = {
-  format,
   generateCode,
   pull,
   commitAndPush,
