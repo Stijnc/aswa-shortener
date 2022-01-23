@@ -38,20 +38,27 @@ test('format formats the redirects links', () => {
 "
 `)
 })
-
 test('validates links are unique', () => {
-  expect(() => validateUnique('/foo', `/bar https://bar.com`)).not.toThrow()
   expect(() =>
-    validateUnique('/foo', `/foo https://foo.com`),
+    validateUnique(
+      JSON.parse(`{"route": "/foo", "redirect": ""}`),
+      JSON.parse(`[{"route": "/bar", "redirect": "https://bar.com"}]`),
+    ),
+  ).not.toThrow()
+  expect(() =>
+    validateUnique(
+      JSON.parse(`{"route": "/foo", "redirect": ""}`),
+      JSON.parse(`[{"route": "/foo", "redirect": "https://foo.com"}]`),
+    ),
   ).toThrowErrorMatchingInlineSnapshot(
-    `"A link with this code already exists. It points to https://foo.com"`,
+    `"A link with this code already exists."`,
   )
 })
 
 test('validates url is valid', () => {
   expect(() => validateUrl('https://blah.com')).not.toThrow()
   expect(() => validateUrl('blah')).toThrowErrorMatchingInlineSnapshot(
-    `"Invalid URL: blah"`,
+    `"Invalid URL"`,
   )
 })
 

@@ -32,13 +32,20 @@ function parseLinks(contents) {
   })
 }
 
-function validateUnique(short, contents) {
-  const links = parseLinks(contents)
-  const [, existingLink] = links.find(([s]) => s === short) || []
-  if (existingLink) {
-    throw new Error(
-      `A link with this code already exists. It points to ${existingLink}`,
-    )
+function validateUnique(newRoute, content) {
+  content.push(newRoute)
+  const hasDuplicate = (arrayObj, colName) => {
+    const hash = Object.create(null)
+    return arrayObj.some(arr => {
+      return (
+        arr[colName] && (hash[arr[colName]] || !(hash[arr[colName]] = true))
+      )
+    })
+  }
+  const isDuplicate = hasDuplicate(content, 'route')
+  console.log(isDuplicate)
+  if (isDuplicate) {
+    throw new Error(`A link with this code already exists.`)
   }
 }
 
