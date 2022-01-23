@@ -56,7 +56,7 @@ if (longLink) {
     redirect: `${formattedLink}`,
     statusCode: '301',
   }
-  validateUnique(newRoute, contents.routes)
+  validateUnique(newRoute, [...contents.routes])
   contents.routes.push(newRoute)
 }
 
