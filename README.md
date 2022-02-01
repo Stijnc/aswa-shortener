@@ -32,7 +32,7 @@ This relies on
 file for building a super simple URL shortener where the URLs are managed on
 GitHub and Azure Static Web App handles the redirecting for you.
 
-The solution is heavily build upon
+The solution is build upon
 [netlify](https://github.com/kentcdodds/netlify-shortener) by
 [Kent C. Dodds](https://github.com/kentcdodds).
 
@@ -83,7 +83,7 @@ You also need to add
     "appLocation": "src"
   },
   "scripts": {
-    "shorten": "asweb-shortener"
+    "shorten": "aswa-shortener"
   }
 }
 ```
@@ -96,7 +96,7 @@ npm run shorten https://yahoo.com # generates a short code and adds it for you
 npm run shorten https://github.com gh # adds gh as a short URL for you
 ```
 
-The `asweb-shortener` does a few things:
+The `aswa-shortener` does a few things:
 
 1. generates a short code if one is not provided
 2. validates your URL is a real URL
@@ -123,7 +123,7 @@ a custom function for your shell.
 2. Create the `cli.js` file:
    ```js
    #!/usr/bin/env node
-   require('asweb-shortener')
+   require('aswa-shortener')
    ```
 3. From your project directory, run the following to register the command
    globally:

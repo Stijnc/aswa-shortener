@@ -9,6 +9,8 @@ on:
       - 'beta'
       - 'alpha'
       - '!all-contributors/**'
+    paths-ignore:
+      - '**/README.md'
   pull_request: {}
 jobs:
   main:
